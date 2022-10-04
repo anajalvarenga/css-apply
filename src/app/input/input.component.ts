@@ -7,7 +7,7 @@ import { InputService } from './input.service';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
-  inputText: string = 'width: 200px;\nheight: 200px;\nborder: 2px solid blue;\nborder-radius: 100px;';
+  inputText: string = 'width: 200px;\nheight: 200px;\nborder: 2px solid #BB86FC;\nborder-radius: 100px;';
 
   constructor(private inputService: InputService) { }
 

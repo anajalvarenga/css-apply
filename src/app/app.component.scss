@@ -1,7 +1,22 @@
+@import '../assets/variables';
+
 :host {
-    width: 100vw;
-    height: 100vh;
+  padding: 40px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 60px;
+    color: $on-background;
+  }
+
+  .d-flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    app-input {
+      margin-bottom: 60px;
+    }
+  }
 }
