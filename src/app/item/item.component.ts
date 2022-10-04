@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InputService } from '../input/input.service';
 
 @Component({
   selector: 'app-item',
@@ -6,9 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  @Input() style = 'width: 200px; height: 200px; border: 2px solid blue; border-radius: 100px;';
+  style = 'width: 200px;\nheight: 200px;\nborder: 2px solid blue;\nborder-radius: 100px;';
 
-  constructor() { }
+  constructor(private inputService: InputService) {
+    this.inputService.styleText$.subscribe((style) => this.style = style);
+  }
 
   ngOnInit(): void {
   }

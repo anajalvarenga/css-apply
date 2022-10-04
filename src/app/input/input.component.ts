@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { InputService } from './input.service';
 
 @Component({
   selector: 'app-input',
@@ -6,16 +7,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
-  inputText: string = 'width: 200px; height: 200px; border: 2px solid blue; border-radius: 100px;';
-  @Output() inputTextChanged = new EventEmitter<string>();
+  inputText: string = 'width: 200px;\nheight: 200px;\nborder: 2px solid blue;\nborder-radius: 100px;';
 
-  constructor() { }
+  constructor(private inputService: InputService) { }
 
   ngOnInit(): void {
   }
 
-  setStyle() {
-    this.inputTextChanged.emit(this.inputText);
+  onSetStyle() {
+    this.inputService.setStyle(this.inputText);
   }
 
 }
